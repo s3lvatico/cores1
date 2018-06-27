@@ -16,4 +16,14 @@
       <url-pattern>/logout</url-pattern>
    </servlet-mapping>
 
+
+   <servlet>
+      <servlet-name>ShowItemsServlet</servlet-name>
+      <servlet-class>org.gmnz.web.ShowItems</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>ShowItemsServlet</servlet-name>
+      <url-pattern>/showItems</url-pattern>
+   </servlet-mapping>
+
 </web-app>
