@@ -85,6 +85,13 @@ public final class Catalog {
 
 
 
+	/**
+	 * gets the {@link CatalogItem} with the corresponding itemID. Returns <code>null</code> if there is no item
+	 * with the specified id
+	 *
+	 * @param itemID id of the requested item
+	 * @return the corresponding {@link CatalogItem} or <code>null</code>
+	 */
 	public static CatalogItem getItem(String itemID) {
 		CatalogItem item;
 		if (itemID == null) {
