@@ -1,1 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
+/build/
+
+# i file di eclipse
+.settings/
+.classpath
+.project
