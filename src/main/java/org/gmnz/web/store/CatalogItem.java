@@ -2,19 +2,18 @@ package org.gmnz.web.store;
 
 
 /**
- * Describes a catalog item for an online store. The itemID
- * uniquely identifies the item, the short description
- * gives brief info like the book title and author,
- * the long description describes the item in a couple
- * of sentences, and the cost gives the current per-item price.
- * Both the short and long descriptions can contain HTML
- * markup.
+ * Describes a catalog item for an online store. The itemID uniquely identifies
+ * the item, the short description gives brief info like the book title and
+ * author, the long description describes the item in a couple of sentences, and
+ * the cost gives the current per-item price. Both the short and long
+ * descriptions can contain HTML markup.
  */
 public class CatalogItem {
 	private String itemID;
 	private String shortDescription;
 	private String longDescription;
 	private double cost;
+
 
 
 
@@ -27,9 +26,11 @@ public class CatalogItem {
 
 
 
+
 	public String getItemID() {
 		return itemID;
 	}
+
 
 
 
@@ -39,9 +40,11 @@ public class CatalogItem {
 
 
 
+
 	public String getShortDescription() {
 		return shortDescription;
 	}
+
 
 
 
@@ -51,9 +54,11 @@ public class CatalogItem {
 
 
 
+
 	public String getLongDescription() {
 		return longDescription;
 	}
+
 
 
 
@@ -63,9 +68,11 @@ public class CatalogItem {
 
 
 
+
 	public double getCost() {
 		return cost;
 	}
+
 
 
 

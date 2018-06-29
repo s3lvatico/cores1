@@ -29,11 +29,9 @@ public class ShowItems extends HttpServlet {
 		PrintWriter out = resp.getWriter();
 		String title = "Items Purchased";
 		String docType = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
-		out.println(docType +
-				"<HTML>\n" +
-				"<HEAD><TITLE>" + title + "</TITLE></HEAD>\n" +
-				"<BODY BGCOLOR=\"#FDF5E6\">\n" +
-				"<H1>" + title + "</H1>");
+		out.println(docType + "<HTML>\n" + "<HEAD><TITLE>" + title + "</TITLE></HEAD>\n" +
+		// TODO cambia questa roba con l'uso di un CSS
+				"<BODY BGCOLOR=\"#FDF5E6\">\n" + "<H1>" + title + "</H1>");
 
 		synchronized (previousItems) {
 			if (newItem != null) {
@@ -41,7 +39,8 @@ public class ShowItems extends HttpServlet {
 			}
 			if (previousItems.size() == 0) {
 				out.println("<i>No items</i>");
-			} else {
+			}
+			else {
 				out.println("<ul>");
 				for (String item : previousItems) {
 					out.printf("<li>%s</li>%n", item);

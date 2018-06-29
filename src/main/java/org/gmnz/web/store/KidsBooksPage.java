@@ -1,7 +1,7 @@
 package org.gmnz.web.store;
 
 
-public class KidsBooksPage extends  CatalogPage {
+public class KidsBooksPage extends CatalogPage {
 
 	public void init() {
 		String[] ids = { "lewis001", "alexander001", "rowling001" };

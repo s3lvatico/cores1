@@ -15,9 +15,11 @@ public class AccessInfo implements HttpSessionBindingListener {
 
 
 
+
 	public AccessInfo() {
 		accessCount = 1;
 	}
+
 
 
 
@@ -25,8 +27,10 @@ public class AccessInfo implements HttpSessionBindingListener {
 	public void valueBound(HttpSessionBindingEvent httpSessionBindingEvent) {
 		final HttpSession session = httpSessionBindingEvent.getSession();
 		sessionCreationDate = new Date(session.getCreationTime());
-		System.out.printf("new value bound | name [%s] | value [%s]%n", httpSessionBindingEvent.getName(), httpSessionBindingEvent.getValue());
+		System.out.printf("new value bound | name [%s] | value [%s]%n", httpSessionBindingEvent.getName(),
+				httpSessionBindingEvent.getValue());
 	}
+
 
 
 
@@ -37,15 +41,18 @@ public class AccessInfo implements HttpSessionBindingListener {
 
 
 
+
 	public void updateAccessCount() {
 		accessCount++;
 	}
 
 
 
+
 	public int getAccessCount() {
 		return accessCount;
 	}
+
 
 
 
