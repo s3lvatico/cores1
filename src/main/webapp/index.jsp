@@ -12,38 +12,54 @@
     <title>titolo jsp</title>
 </head>
 <body>
-<p>A seguire, la data di oggi: <%= new java.util.Date() %>
-</p>
-<h3>informazioni ottenute dagli oggetti impliciti</h3>
-<p>
-<ul>
-    <li>Request Url : <%= request.getRequestURL()%>
-    </li>
-    <li>Query String : <%= request.getQueryString()%>
-    </li>
-    <li>Response headers: <%= response.getHeaderNames()%>
-    </li>
-    <li>Response status: <%= response.getStatus()%>
-    </li>
-    <li>Response Character Encoding: <%= response.getCharacterEncoding()%>
-    </li>
-    <li>
-        Nuova sessione? : <%= session.isNew()%>
-    </li>
-    <li>
-        Data creazione sessione: <%= session.getCreationTime() %>
-    </li>
-    <li>
-        Attributi sessione: <%= session.getAttributeNames() %>
-    </li>
-    <li>
-        Servlet context information: <%= application.getServerInfo()%>
-    </li>
-</ul>
-</p>
-<h3>Altre robe</h3>
-<p>
-    Tipo un numero casuale: <%= Math.random()%>
-</p>
+<table>
+    <tr>
+        <td>A seguire, la data di oggi: <%= new java.util.Date() %>
+        </td>
+        <td><h3>informazioni ottenute dagli oggetti impliciti</h3>
+            <p>
+            <ul>
+                <li>Request Url : <%= request.getRequestURL()%>
+                </li>
+                <li>Query String : <%= request.getQueryString()%>
+                </li>
+                <li>Response headers: <%= response.getHeaderNames()%>
+                </li>
+                <li>Response status: <%= response.getStatus()%>
+                </li>
+                <li>Response Character Encoding: <%= response.getCharacterEncoding()%>
+                </li>
+                <li>
+                    Nuova sessione? : <%= session.isNew()%>
+                </li>
+                <li>
+                    Data creazione sessione: <%= session.getCreationTime() %>
+                </li>
+                <li>
+                    Attributi sessione: <%= session.getAttributeNames() %>
+                </li>
+                <li>
+                    Servlet context information: <%= application.getServerInfo()%>
+                </li>
+            </ul>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><h3>Altre robe</h3>
+            <p>
+                Tipo un numero casuale: <%= Math.random()%>
+            </p>
+        </td>
+        <td>
+            <%-- qui sotto c'è un esempio di scriptlet --%>
+            <%-- scriptlet == FRAMMENTO di codice java --%>
+            <%
+                String queryData = request.getQueryString();
+                out.println("attached query: " + queryData);
+            %>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
