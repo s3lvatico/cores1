@@ -1,0 +1,16 @@
+body {
+	background-color: #fdf5e6;
+	font-family: "Lucida Sans", SansSerif;
+}
+
+h1, h2, h3 {
+	color: #440000;
+}
+
+.testa {
+	color: crimson;
+}
+
+.croce {
+	color: greenyellow;
+}
