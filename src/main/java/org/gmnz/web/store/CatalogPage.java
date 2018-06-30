@@ -23,7 +23,6 @@ public abstract class CatalogPage extends HttpServlet {
 
 
 
-
 	/**
 	 * Given an array of item IDs, look them up in the Catalog and put their
 	 * corresponding CatalogItem entry into the items array. The CatalogItem
@@ -43,7 +42,6 @@ public abstract class CatalogPage extends HttpServlet {
 
 
 
-
 	/**
 	 * Sets the page title, which is displayed in an H1 heading in resultant page.
 	 * <p>
@@ -53,7 +51,6 @@ public abstract class CatalogPage extends HttpServlet {
 	protected void setTitle(String title) {
 		this.title = title;
 	}
-
 
 
 
@@ -75,30 +72,23 @@ public abstract class CatalogPage extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String docType = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">\n";
-		out.println(docType + "<HTML>\n" + "<HEAD><TITLE>" + title + "</TITLE></HEAD>\n" +
-		// TODO anche qui referenzia un css
-				"<BODY BGCOLOR=\"#FDF5E6\">\n"
-				// ---
+		out.println(docType + "<HTML>\n" + "<HEAD><TITLE>" + title + "</TITLE></HEAD>\n"
+				+ "<BODY BGCOLOR=\"#FDF5E6\">\n"
 				+ "<H1 ALIGN=\"CENTER\">" + title + "</H1>");
-		CatalogItem item;
-		for (int i = 0; i < catalogItems.length; i++) {
-			out.println("<HR>");
-			item = catalogItems[i];
 
-			// Show error message if subclass lists item ID
-			// that's not in the catalog.
-			if (item == null) {
-				out.println("<FONT COLOR=\"RED\">" + "Unknown item ID " + itemIDs[i] + "</FONT>");
-			}
-			else {
-				out.println();
-
-				// TODO modificare
+		if (catalogItems.length == 0) {
+			out.println("<FONT COLOR=\"RED\">Empty catalog</FONT>");
+		} else {
+			for (CatalogItem item : catalogItems) {
+				out.printf("<HR>%n");
 				String formURL = "/cores1/storeSrv/orderPage";
-				// ----
 
 				// Pass URLs that reference own site through encodeURL.
 				formURL = response.encodeURL(formURL);
+				/*
+				nota bene l'input nascosto con nome "itemID", sarà il nome del parametro trasferito alla pagina
+				degli ordini quando si invia il form
+				 */
 				out.println("<FORM ACTION=\"" + formURL + "\">\n" + "<INPUT TYPE=\"HIDDEN\" NAME=\"itemID\" " + " VALUE=\""
 						+ item.getItemID() + "\">\n" + "<H2>" + item.getShortDescription() + " ($" + item.getCost()
 						+ ")</H2>\n" + item.getLongDescription() + "\n" + "<P>\n<CENTER>\n" + "<INPUT TYPE=\"SUBMIT\" "

@@ -26,4 +26,31 @@
       <url-pattern>/showItems</url-pattern>
    </servlet-mapping>
 
+   <servlet>
+      <servlet-name>StoreKidsBooks</servlet-name>
+      <servlet-class>org.gmnz.web.store.KidsBooksPage</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>StoreKidsBooks</servlet-name>
+      <url-pattern>/storeSrv/kids</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>StoreTechBooks</servlet-name>
+      <servlet-class>org.gmnz.web.store.TechBooksPage</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>StoreTechBooks</servlet-name>
+      <url-pattern>/storeSrv/tech</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>OrderPage</servlet-name>
+      <servlet-class>org.gmnz.web.store.OrderPage</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>OrderPage</servlet-name>
+      <url-pattern>/storeSrv/orderPage</url-pattern>
+   </servlet-mapping>
+
 </web-app>

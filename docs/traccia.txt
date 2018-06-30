@@ -1,0 +1,31 @@
+Session tracking
+----------------
+
+creazione di una mini applicazione tutta gestita da servlet per eseguire ordini
+ipotetici da un catalogo.
+
+Inizia creando il front end, classe astratta CatalogPage.
+Dipende da CatalogItem (semplice bean)
+Dipende da Catalog (classe repository statica che contiene i dati fisici dei
+libri ordinabili, più un metodo di accesso)
+
+CatalogPage è estesa da altre servlet che visualizzano specifiche sezioni del
+catalogo libri.
+
+TODO mappare la servlet OrderPage
+FATTO TODO mappare la servlet kidsbooksPage
+FATTO TODO mappare la servlet TechBooksPage
+
+
+OrderPage
+tiene conto della provenienza.
+discrimina la provenienza a seconda della presenza o meno del parametro che
+specifica la quantità di un certo libro da ordinare. Se il prametro non c'è
+vuol dire che si è venuti da una semplice pagina di selezione del libro,
+se invece è valorizzato vuol dire che si arriva dalla pagina di visualizzazione
+dell'ordine (che a questo livello ancora non ho composto) per aggiornare
+l'ordine stesso.
+
+OrderPage dipende da ShoppingCart
+FATTO ShoppingCart dipende da ItemOrder
+FATTO ItemOrder è un aggregato di un CatalogItem e una quantità

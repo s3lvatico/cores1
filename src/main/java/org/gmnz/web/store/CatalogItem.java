@@ -9,6 +9,7 @@ package org.gmnz.web.store;
  * descriptions can contain HTML markup.
  */
 public class CatalogItem {
+
 	private String itemID;
 	private String shortDescription;
 	private String longDescription;
