@@ -22,7 +22,6 @@
 <html>
 <head>
     <title>showSession</title>
-
     <link rel="stylesheet" href="css/showSession.css">
 </head>
 <body>
